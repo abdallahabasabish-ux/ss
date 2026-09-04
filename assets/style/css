@@ -1,3 +1,9 @@
+/* ========== [ STING WEB ] =========
+~> Name Template     : Football Auto API
+~> Version           : V 1.0 BETA
+~> Last Updated      : 05 - 02 - 2025
+~> Developer By      : STING WEB
+==================================== */ 
 :root {
     --A-Color: #0b0d10;
     --B-Color: #15191d;
