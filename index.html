@@ -1,782 +1,1294 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<!-- Emad Othman -->
 <head>
-    <!-- ===== CSS الموحد ===== -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- ===== أدوات منع الإعلانات (AdBlock) ===== -->
-    <script src="ads-prebid.js"></script>
-    <script>
-        (function () {
-            let adblockDetected = false;
-            let script = document.createElement("script");
-            script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-            script.onerror = function () {
-                adblockDetected = true;
-            };
-            script.onload = function () {
-                adblockDetected = false;
-            };
-            document.head.appendChild(script);
-            function showBlock() {
-                document.body.innerHTML = `
-                    <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#111;color:#fff;flex-direction:column;text-align:center;">
-                        <h1>🚫 مانع الإعلانات مفعل</h1>
-                        <p>يرجى تعطيله للمتابعة</p>
-                        <button onclick="location.reload()" style="padding:10px 20px;cursor:pointer;border-radius:8px;border:none;background:#39dbbf;color:#000;font-weight:bold;">إعادة المحاولة</button>
-                    </div>`;
-            }
-            function check() { if (adblockDetected) showBlock(); }
-            setTimeout(check, 1500);
-        })();
-    </script>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9737640835715634" crossorigin="anonymous"></script>
-
-    <!-- ===== Meta Data ===== -->
-    <meta charset="UTF-8">
-    <meta name="description" content="هزازي سبورت - Hazazy Sport هو الموقع الأمثل لمتابعة أهم مباريات اليوم لحظياً." />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link href='https://www.messisporat.com/assets/images/favicon.ico?v=1.8.31' rel='icon' type='image/x-icon' />
-    <link rel="apple-touch-icon" href="https://www.messisporat.com/assets/images/favicon.ico?v=1.8.31">
-    <link rel="manifest" href="/assets/manifest.json?v=1.8.31" />
-    <link rel="canonical" href="https://www.messisporat.com/" />
-    <link rel="alternate" hreflang="ar" href="https://www.messisporat.com" />
-    <link rel="alternate" hreflang="en" href="https://www.messisporat.com/en/" />
-    <link rel="alternate" hreflang="x-default" href="https://www.messisporat.com" />
-    <meta name="keywords" content="هزازي سبورت, Hazazy Sport, كرة القدم, مباريات اليوم, بث مباشر" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="theme-color" content="#0e1019" />
-    <meta name="msapplication-navbutton-color" content="#0e1019" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="هزازي سبورت | متابعة لحظية لمباريات كرة القدم" />
-    <meta property="og:description" content="هزازي سبورت - Hazazy Sport هو الموقع الأمثل لمتابعة أهم مباريات اليوم لحظياً." />
-    <meta property="og:image" content="https://www.messisporat.com/assets/images/og-default.png" />
-    <meta property="og:url" content="https://www.messisporat.com/" />
-    <meta property="og:site_name" content="هزازي سبورت" />
-    <meta property="og:locale" content="ar_AR" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="هزازي سبورت | متابعة لحظية لمباريات كرة القدم" />
-    <meta name="twitter:description" content="هزازي سبورت - Hazazy Sport هو الموقع الأمثل لمتابعة أهم مباريات اليوم لحظياً." />
-    <meta name="twitter:image" content="https://www.messisporat.com/assets/images/og-default.png" />
-    <title>هزازي سبورت | متابعة لحظية لمباريات كرة القدم</title>
-    <meta name="color-scheme" content="dark">
-
-    <!-- ===== Google Consent Mode v2 ===== -->
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'ad_personalization': 'denied',
-            'analytics_storage': 'denied',
-            'wait_for_update': 500
-        });
-    </script>
-
-    <!-- ===== Google Ad Manager (GPT) ===== -->
-    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
-    <script>
-        window.googletag = window.googletag || { cmd: [] };
-
-        if (typeof googletag !== 'undefined') {
-            googletag.cmd.push(function () {
-                /* ── Size mappings ── */
-                var mappingAnchor = googletag.sizeMapping()
-                    .addSize([1024, 0], [
-                        [728, 90]
-                    ])
-                    .addSize([768, 0], [
-                        [728, 90]
-                    ])
-                    .addSize([0, 0], [
-                        [320, 50]
-                    ])
-                    .build();
-
-                var mappingArticleMiddle = googletag.sizeMapping()
-                    .addSize([1024, 0], [
-                        [728, 90], [300, 250], [336, 280]
-                    ])
-                    .addSize([768, 0], [
-                        [300, 250], [336, 280]
-                    ])
-                    .addSize([0, 0], [
-                        [300, 250]
-                    ])
-                    .build();
-
-                var mappingFooter = googletag.sizeMapping()
-                    .addSize([1024, 0], [
-                        [970, 90], [728, 90]
-                    ])
-                    .addSize([768, 0], [
-                        [728, 90]
-                    ])
-                    .addSize([0, 0], [
-                        [320, 50]
-                    ])
-                    .build();
-
-                var mappingHeaderLeaderboard = googletag.sizeMapping()
-                    .addSize([1024, 0], [
-                        [728, 90], [300, 250], [970, 250], [320, 50], [970, 90], [320, 100]
-                    ])
-                    .addSize([768, 0], [
-                        [728, 90], [300, 250]
-                    ])
-                    .addSize([0, 0], [
-                        [320, 50], [320, 100]
-                    ])
-                    .build();
-
-                var mappingGAd = googletag.sizeMapping()
-                    .addSize([1024, 0], [
-                        [300, 600], [336, 280], [300, 250], [250, 250]
-                    ])
-                    .addSize([768, 0], [
-                        [336, 280], [300, 250], [250, 250]
-                    ])
-                    .addSize([0, 0], [
-                        [300, 250], [250, 250]
-                    ])
-                    .build();
-
-                /* ── Slots ── */
-                googletag.defineOutOfPageSlot('/23212078890/Koura_Interstitial', 'div-gpt-ad-1773272592314-0')
-                    .addService(googletag.pubads());
-
-                googletag.defineSlot('/23212078890/Koura_Anchor', [
-                        [320, 50], [728, 90]
-                    ], 'div-gpt-ad-1773272758313-0')
-                    .defineSizeMapping(mappingAnchor)
-                    .addService(googletag.pubads());
-
-                googletag.defineSlot('/23212078890/Koura_Article_Middle', [
-                        [300, 250], [336, 280], [728, 90]
-                    ], 'div-gpt-ad-1773272859136-0')
-                    .defineSizeMapping(mappingArticleMiddle)
-                    .addService(googletag.pubads());
-
-                googletag.defineSlot('/23212078890/Koura_Footer', [
-                        [320, 50], [970, 90], [728, 90]
-                    ], 'div-gpt-ad-1773339317636-0')
-                    .defineSizeMapping(mappingFooter)
-                    .addService(googletag.pubads());
-
-                googletag.defineSlot('/23212078890/Koura_Header_Leaderboard', [
-                        [728, 90], [300, 250], [970, 250], [320, 50], [970, 90], [320, 100]
-                    ], 'div-gpt-ad-1773272933123-0')
-                    .defineSizeMapping(mappingHeaderLeaderboard)
-                    .addService(googletag.pubads());
-
-                googletag.defineSlot('/23212078890/Koura_Sidebar', [
-                        [300, 250], [300, 600]
-                    ], 'div-gpt-ad-1773272986889-0')
-                    .addService(googletag.pubads());
-
-                // GAd_1 (5 instances)
-                for (let i = 1; i <= 5; i++) {
-                    googletag.defineSlot('/23212078890/GAd_1', [
-                            [300, 600], [250, 250], [300, 250], [336, 280], 'fluid', [250, 360]
-                        ], `div-gpt-gad1-slot-${i}`)
-                        .defineSizeMapping(mappingGAd)
-                        .addService(googletag.pubads());
-                }
-
-                // GAd_3 (5 instances)
-                for (let i = 1; i <= 5; i++) {
-                    googletag.defineSlot('/23212078890/GAd_3', [
-                            [300, 600], 'fluid', [250, 250], [250, 360], [336, 280], [300, 250]
-                        ], `div-gpt-gad3-slot-${i}`)
-                        .defineSizeMapping(mappingGAd)
-                        .addService(googletag.pubads());
-                }
-
-                // GAd_Reward (2 instances)
-                googletag.defineSlot('/23212078890/GAd_Reward', [1, 1], 'div-gpt-reward-slot-1')
-                    .addService(googletag.pubads());
-                googletag.defineSlot('/23212078890/GAd_Reward', [1, 1], 'div-gpt-reward-slot-2')
-                    .addService(googletag.pubads());
-
-                googletag.pubads().enableSingleRequest();
-                googletag.pubads().collapseEmptyDivs();
-                googletag.enableServices();
-            });
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>محفظتي</title>
+    <!-- Font Awesome 6 (Free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Google Font - Cairo (Arabic) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
-    </script>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #f8f9fa;
+            color: #1F2937;
+            direction: rtl;
+            min-height: 100vh;
+            padding-bottom: 80px;
+            overflow-x: hidden;
+        }
+        a,
+        button {
+            font-family: inherit;
+        }
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e5e7eb;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8B0000;
+            border-radius: 8px;
+        }
 
-    <!-- ===== CMP Consent Banner ===== -->
-    <script>
-        (function () {
-            var CONSENT_KEY = 'koura_consent_v1';
+        /* ===== COLOR VARIABLES ===== */
+        :root {
+            --primary: #8B0000;
+            --primary-light: #A52A2A;
+            --primary-gradient: linear-gradient(135deg, #8B0000, #5C0000);
+            --accent: #8B0000;
+            --accent-light: #f5e6e6;
+            --accent-gradient: linear-gradient(135deg, #8B0000, #5C0000);
+            --bg: #f8f9fa;
+            --card: #ffffff;
+            --text: #1F2937;
+            --text-secondary: #6B7280;
+            --text-muted: #9CA3AF;
+            --border: #f1f3f5;
+            --success: #10B981;
+            --danger: #8B0000;
+            --warning: #F59E0B;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.10);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --radius-full: 50px;
+            --transition: 0.25s ease;
+        }
 
-            function updateConsent(granted) {
-                var state = granted ? 'granted' : 'denied';
-                if (typeof gtag === 'function') {
-                    gtag('consent', 'update', {
-                        'ad_storage': state,
-                        'ad_personalization': state,
-                        'analytics_storage': state
-                    });
-                }
-                try { localStorage.setItem(CONSENT_KEY, granted ? '1' : '0'); } catch (e) {}
+        /* ===== UTILITY ===== */
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .text-muted {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        .text-small {
+            font-size: 0.75rem;
+        }
+        .flex {
+            display: flex;
+            align-items: center;
+        }
+        .flex-between {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .flex-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gap-2 {
+            gap: 8px;
+        }
+        .gap-3 {
+            gap: 12px;
+        }
+        .gap-4 {
+            gap: 16px;
+        }
+        .mt-2 {
+            margin-top: 8px;
+        }
+        .mt-3 {
+            margin-top: 12px;
+        }
+        .mt-4 {
+            margin-top: 16px;
+        }
+        .mb-2 {
+            margin-bottom: 8px;
+        }
+        .mb-3 {
+            margin-bottom: 12px;
+        }
+        .mb-4 {
+            margin-bottom: 16px;
+        }
+        .w-full {
+            width: 100%;
+        }
+
+        /* ===== LOADING SPINNER ===== */
+        .spinner {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
             }
+        }
 
-            function showBanner() {
-                var banner = document.createElement('div');
-                banner.id = 'koura-consent-banner';
-                banner.setAttribute('role', 'dialog');
-                banner.setAttribute('aria-modal', 'true');
-                banner.setAttribute('aria-label', 'Cookie consent');
-                banner.style.cssText = [
-                    'position:fixed', 'bottom:0', 'left:0', 'right:0', 'z-index:99999',
-                    'background:#1a1a2e', 'color:#fff', 'padding:14px 20px',
-                    'display:flex', 'align-items:center', 'justify-content:space-between',
-                    'flex-wrap:wrap', 'gap:12px', 'font-family:sans-serif', 'font-size:14px',
-                    'box-shadow:0 -2px 8px rgba(0,0,0,.4)'
-                ].join(';');
+        /* ===== HEADER ===== */
+        .app-header {
+            background: var(--primary-gradient);
+            padding: 20px 16px 14px;
+            border-radius: 0 0 28px 28px;
+            box-shadow: 0 6px 24px rgba(139, 0, 0, 0.30);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .app-header .header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .app-header .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .app-header .logo-area img {
+            height: 36px;
+            width: auto;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 4px 6px;
+        }
+        .app-header .logo-area .brand-name {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: -0.3px;
+        }
+        .app-header .user-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 4px 12px 4px 10px;
+            border-radius: 50px;
+            backdrop-filter: blur(4px);
+        }
+        .app-header .user-badge .avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--accent-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        .app-header .user-badge .user-info {
+            color: #fff;
+            font-size: 0.78rem;
+            line-height: 1.3;
+        }
+        .app-header .user-badge .user-info .name {
+            font-weight: 600;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            letter-spacing: 0.3px;
+        }
+        .app-header .user-badge .user-info .phone {
+            font-size: 0.65rem;
+            opacity: 0.85;
+            direction: ltr;
+            unicode-bidi: plaintext;
+        }
 
-                var text = document.createElement('span');
-                text.textContent = 'نستخدم ملفات تعريف الارتباط لعرض إعلانات مخصصة. هل توافق؟';
-                banner.appendChild(text);
+        /* ===== BALANCE CARD ===== */
+        .balance-card {
+            background: var(--primary-gradient);
+            border-radius: var(--radius);
+            padding: 20px 22px;
+            margin-top: 16px;
+            color: #fff;
+            box-shadow: 0 8px 32px rgba(139, 0, 0, 0.30);
+            position: relative;
+            overflow: hidden;
+        }
+        .balance-card::after {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -20%;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .balance-card .label {
+            font-size: 0.8rem;
+            opacity: 0.75;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .balance-card .balance-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 6px;
+        }
+        .balance-card .balance-amount {
+            font-size: 2.1rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            direction: ltr;
+            unicode-bidi: plaintext;
+        }
+        .balance-card .balance-amount .currency {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-left: 4px;
+        }
+        .balance-card .balance-amount.hidden .digits {
+            filter: blur(8px);
+            user-select: none;
+        }
+        .balance-card .toggle-balance {
+            background: rgba(255, 255, 255, 0.12);
+            border: none;
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .balance-card .toggle-balance:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .balance-card .sub-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 12px;
+            font-size: 0.75rem;
+            opacity: 0.7;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 12px;
+        }
+        .balance-card .sub-info .error-tag {
+            color: #ffcccc;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
 
-                var actions = document.createElement('div');
-                actions.style.cssText = 'display:flex;gap:10px;flex-shrink:0';
+        /* ===== ACTION GRID ===== */
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 18px;
+        }
+        .action-btn {
+            background: var(--card);
+            border: none;
+            border-radius: var(--radius-sm);
+            padding: 14px 6px 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: var(--text);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+        .action-btn:active {
+            transform: scale(0.96);
+        }
+        .action-btn .icon-wrap {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+        .action-btn .icon-wrap.primary {
+            background: var(--primary-gradient);
+        }
+        .action-btn .icon-wrap.accent {
+            background: var(--accent-gradient);
+        }
+        .action-btn .icon-wrap.green {
+            background: linear-gradient(135deg, #10B981, #059669);
+        }
+        .action-btn .icon-wrap.purple {
+            background: linear-gradient(135deg, #8B5CF6, #6D28D9);
+        }
+        .action-btn .label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
 
-                var acceptBtn = document.createElement('button');
-                acceptBtn.textContent = 'قبول';
-                acceptBtn.style.cssText =
-                'background:#e94560;color:#fff;border:none;padding:8px 18px;border-radius:4px;cursor:pointer;font-size:14px';
-                acceptBtn.addEventListener('click', function () {
-                    updateConsent(true);
-                    banner.remove();
-                });
+        /* ===== SECTION HEADER ===== */
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 22px 0 12px;
+        }
+        .section-header h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .section-header .link-btn {
+            background: none;
+            border: none;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .section-header .link-btn:hover {
+            color: #5C0000;
+        }
 
-                var rejectBtn = document.createElement('button');
-                rejectBtn.textContent = 'رفض';
-                rejectBtn.style.cssText =
-                    'background:transparent;color:#ccc;border:1px solid #555;padding:8px 14px;border-radius:4px;cursor:pointer;font-size:14px';
-                rejectBtn.addEventListener('click', function () {
-                    updateConsent(false);
-                    banner.remove();
-                });
+        /* ===== ERROR STATE - NO TRANSACTIONS ===== */
+        .error-state-container {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 40px 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            border: 2px dashed #8B0000;
+            margin-top: 10px;
+        }
+        .error-state-container .error-icon {
+            font-size: 3.5rem;
+            color: #8B0000;
+            margin-bottom: 12px;
+            display: block;
+            animation: pulseError 1.5s ease-in-out infinite;
+        }
+        @keyframes pulseError {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+        .error-state-container h4 {
+            font-size: 1.1rem;
+            color: #8B0000;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .error-state-container p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+        .error-state-container .error-code {
+            display: inline-block;
+            background: #f5e6e6;
+            color: #8B0000;
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-top: 10px;
+            font-family: monospace;
+            direction: ltr;
+        }
 
-                actions.appendChild(acceptBtn);
-                actions.appendChild(rejectBtn);
-                banner.appendChild(actions);
-                document.body.appendChild(banner);
+        /* ===== TRANSACTIONS PAGE ERROR ===== */
+        .tx-error-banner {
+            background: #fff5f5;
+            border-right: 4px solid #8B0000;
+            padding: 14px 18px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow);
+        }
+        .tx-error-banner i {
+            color: #8B0000;
+            font-size: 1.4rem;
+        }
+        .tx-error-banner .tx-error-text {
+            font-weight: 600;
+            color: #8B0000;
+            font-size: 0.9rem;
+        }
+        .tx-error-banner .tx-error-sub {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* ===== BOTTOM NAV ===== */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: stretch;
+            justify-content: space-around;
+            padding: 6px 0 env(safe-area-inset-bottom, 8px) 0;
+            z-index: 100;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
+        }
+        .bottom-nav .nav-item {
+            background: none;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1px;
+            padding: 4px 12px;
+            font-size: 0.6rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            font-weight: 500;
+            flex: 1;
+            max-width: 80px;
+        }
+        .bottom-nav .nav-item i {
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        .bottom-nav .nav-item.active {
+            color: var(--primary);
+        }
+        .bottom-nav .nav-item.active i {
+            transform: translateY(-2px);
+        }
+        .bottom-nav .nav-item .badge-dot {
+            position: absolute;
+            top: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--danger);
+        }
+
+        /* ===== PAGES ===== */
+        .page {
+            display: none;
+            animation: fadeUp 0.3s ease;
+        }
+        .page.active {
+            display: block;
+        }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
             }
-
-            function init() {
-                try {
-                    var stored = localStorage.getItem(CONSENT_KEY);
-                    if (stored === '1') { updateConsent(true); return; }
-                    if (stored === '0') { updateConsent(false); return; }
-                } catch (e) {}
-                showBanner();
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
+        }
 
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', init);
-            } else {
-                init();
+        /* ===== FILTER TABS (disabled) ===== */
+        .filter-tabs {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            padding: 4px 0 12px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .filter-tabs::-webkit-scrollbar {
+            display: none;
+        }
+        .filter-tabs .filter-btn {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 6px 18px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            cursor: not-allowed;
+            transition: var(--transition);
+        }
+        .filter-tabs .filter-btn.active {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: var(--card);
+            border-radius: var(--radius-sm);
+            padding: 0 14px;
+            box-shadow: var(--shadow);
+            margin-bottom: 16px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .search-box input {
+            border: none;
+            background: transparent;
+            padding: 12px 8px;
+            font-size: 0.9rem;
+            width: 100%;
+            font-family: inherit;
+            color: var(--text);
+        }
+        .search-box input::placeholder {
+            color: var(--text-muted);
+        }
+        .search-box input:focus {
+            outline: none;
+        }
+        .search-box i {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ===== BACK BTN ===== */
+        .back-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 0;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .back-btn:hover {
+            color: var(--primary);
+        }
+
+        /* ===== MODAL ===== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(6px);
+            z-index: 200;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.2s ease;
+        }
+        .modal-overlay.show {
+            display: flex;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
             }
-        })();
-    </script>
+            to {
+                opacity: 1;
+            }
+        }
+        .modal-box {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 28px 24px 20px;
+            max-width: 380px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            animation: slideUp 0.3s ease;
+        }
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .modal-box .modal-icon {
+            font-size: 2.4rem;
+            color: var(--warning);
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .modal-box h4 {
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+        .modal-box p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .modal-box .modal-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .modal-box .modal-actions button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .modal-box .modal-actions .btn-confirm {
+            background: var(--danger);
+            color: #fff;
+        }
+        .modal-box .modal-actions .btn-confirm:hover {
+            background: #5C0000;
+        }
+        .modal-box .modal-actions .btn-cancel {
+            background: var(--border);
+            color: var(--text);
+        }
+        .modal-box .modal-actions .btn-cancel:hover {
+            background: #d1d5db;
+        }
+        .modal-box .modal-actions .btn-confirm-accent {
+            background: var(--accent);
+            color: #fff;
+        }
+        .modal-box .modal-actions .btn-confirm-accent:hover {
+            background: #5C0000;
+        }
+
+        /* ===== TOAST ===== */
+        .toast-container {
+            position: fixed;
+            top: 80px;
+            right: 16px;
+            left: 16px;
+            max-width: 400px;
+            margin: 0 auto;
+            z-index: 300;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            pointer-events: none;
+        }
+        .toast {
+            background: var(--card);
+            padding: 14px 18px;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-right: 4px solid var(--success);
+            pointer-events: auto;
+            animation: slideDown 0.35s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .toast.error {
+            border-right-color: var(--danger);
+        }
+        .toast.warning {
+            border-right-color: var(--warning);
+        }
+        .toast .toast-icon {
+            font-size: 1.2rem;
+            color: var(--success);
+        }
+        .toast.error .toast-icon {
+            color: var(--danger);
+        }
+        .toast.warning .toast-icon {
+            color: var(--warning);
+        }
+        @keyframes slideDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .toast.hide {
+            animation: slideUpOut 0.3s ease forwards;
+        }
+        @keyframes slideUpOut {
+            to {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 400px) {
+            .balance-card .balance-amount {
+                font-size: 1.6rem;
+            }
+            .action-btn .label {
+                font-size: 0.6rem;
+            }
+            .action-btn .icon-wrap {
+                width: 38px;
+                height: 38px;
+                font-size: 0.9rem;
+            }
+        }
+        @media (min-width: 600px) {
+            body {
+                padding: 0 20px 80px;
+            }
+            .container {
+                max-width: 480px;
+                padding: 0;
+            }
+            .app-header {
+                border-radius: 0 0 32px 32px;
+                padding: 24px 24px 18px;
+            }
+        }
+
+        /* ===== HIDE TRANSITION ===== */
+        .tx-item.hidden-item {
+            display: none !important;
+        }
+
+        /* loading shimmer for transactions */
+        .loading-shimmer {
+            background: linear-gradient(90deg, #f0f2f5 25%, #e5e7eb 50%, #f0f2f5 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: var(--radius-sm);
+            height: 60px;
+            margin-bottom: 10px;
+        }
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <!-- ===== الإعلانات العلوية (Top Ads) ===== -->
-    <div id="top-ads-container" class="STING-WEB-ADS">
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9737640835715634" data-ad-slot="4937264036"
-            data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px"
-            data-ad-client="ca-pub-4195905122244694" data-ad-slot="1" data-tag-src="gamtg"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
+
+    <!-- ===== TOAST CONTAINER ===== -->
+    <div class="toast-container" id="toastContainer"></div>
 
     <!-- ===== HEADER ===== -->
-    <header>
-        <div class="STING-WEB-Header">
-            <!-- Right -->
-            <div class="STING-WEB-Header-Right">
-                <div class="STING-WEB-Logo">
-                    <a href="/">
-                        <h1>هزازي سبورت</h1>
-                        <img src="/assets/images/logo.png?v=1.8.31" alt="هزازي سبورت" />
-                    </a>
+    <header class="app-header">
+        <div class="container">
+            <div class="header-row">
+                <div class="logo-area">
+                    <!-- Logo from provided URL -->
+                    <img src="https://25hospital.org/storage/njRwKnhoESJF0hst5azfN6ZZa02IfWXDV4ZwuA6R.png" alt="شعار المحفظة" />
+                    <span class="brand-name">محفظتي</span>
                 </div>
-                <div class="STING-WEB-Menu">
-                    <ul>
-                        <li><a href="/">الرئيسية</a></li>
-                        <li><a href="/matches/">المباريات</a></li>
-                        <li><a href="/standings/">البطولات</a></li>
-                        <li><a href="/news/">مستجدات</a></li>
-                        <li><a href="/">...</a></li>
-                        <li><a href="/en/">English</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Left -->
-            <div class="STING-WEB-Header-Left">
-                <div class="STING-WEB-Search">
-                    <span class="STING-WEB-Search_SVG" style="width:25px; height:25px"></span>
-                    <input type="search" id="searchInput" placeholder="أبحث عن فريق او لاعب" autocomplete="off" />
-                    <div id="searchResults" class="STING-WEB-Search-Results"></div>
-                </div>
-                <script>
-                    document.addEventListener('DOMContentLoaded', function () {
-                        const searchInput = document.getElementById('searchInput');
-                        const searchResults = document.getElementById('searchResults');
-                        const searchContainer = document.querySelector('.STING-WEB-Search');
-                        const searchIcon = document.querySelector('.STING-WEB-Search_SVG');
-                        let timeout = null;
-                        if (!searchInput || !searchResults || !searchContainer || !searchIcon) return;
-                        searchIcon.addEventListener('click', function (e) {
-                            if (window.innerWidth <= 720) {
-                                e.stopPropagation();
-                                searchContainer.classList.toggle('active');
-                                if (searchContainer.classList.contains('active')) { searchInput.focus(); }
-                            }
-                        });
-                        searchContainer.addEventListener('click', function (e) { if (window.innerWidth <= 720) { e
-                                    .stopPropagation(); } });
-                        searchInput.addEventListener('input', function () {
-                            clearTimeout(timeout);
-                            const query = this.value.trim();
-                            if (query.length < 2) { searchResults.classList.remove('active'); return; }
-                            timeout = setTimeout(() => {
-                                const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-                                const url =
-                                    `https://webws.365scores.com/web/search/?query=${encodeURIComponent(query)}&filter=all&langId=27&appTypeId=5&timezoneName=${encodeURIComponent(tz)}`;
-                                fetch(url).then(response => response.json()).then(data => { renderResults(
-                                    data); }).catch(err => console.error('Search error:', err));
-                            }, 300);
-                        });
-
-                        function renderResults(data) {
-                            searchResults.innerHTML = '';
-                            let hasResults = false;
-                            const categories = [
-                                { key: 'competitors', title: 'الأندية', type: 'team' },
-                                { key: 'athletes', title: 'اللاعبين', type: 'player' }
-                            ];
-                            categories.forEach(cat => {
-                                if (data[cat.key] && data[cat.key].length > 0) {
-                                    hasResults = true;
-                                    const group = document.createElement('div');
-                                    group.className = 'STING-WEB-Search-Group';
-                                    group.innerHTML = `<span class="STING-WEB-Search-Group-Title">${cat.title}</span>`;
-                                    data[cat.key].slice(0, 5).forEach(item => {
-                                        const itemEl = document.createElement('div');
-                                        itemEl.className = 'STING-WEB-Search-Item';
-                                        const imgUrl = cat.type === 'team' ?
-                                            `https://imagecache.365scores.com/image/upload/f_auto,w_48,h_48,q_auto:eco,d_Competitors:Default.png/v1/Competitors/${item.id}` :
-                                            `https://imagecache.365scores.com/image/upload/f_png,w_80,h_80,c_limit,q_auto:eco,dpr_2,d_Athletes:default.png,r_max,c_thumb,g_face,z_0.65/v1/Athletes/${item.id}`;
-                                        itemEl.innerHTML =
-                                            `<img src="${imgUrl}" alt=""><div class="STING-WEB-Search-Item-Info"><span class="Item-Name">${item.name}</span><span class="Item-Meta">${cat.type === 'team' ? (item.mainCompetitionName || '') : (item.nationalityName || '')}</span></div>`;
-                                        itemEl.onclick = () => { window.location.href = `/${cat.type}/?id=${item.id}`; };
-                                        group.appendChild(itemEl);
-                                    });
-                                    searchResults.appendChild(group);
-                                }
-                            });
-                            if (!hasResults) { searchResults.innerHTML = '<div class="no-results">لا توجد نتائج مطابقة</div>'; }
-                            searchResults.classList.add('active');
-                        }
-                        document.addEventListener('click', function (e) {
-                            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-                                searchResults.classList.remove('active');
-                                if (window.innerWidth <= 720 && !searchContainer.contains(e.target)) { searchContainer
-                                        .classList.remove('active'); }
-                            }
-                        });
-                    });
-                </script>
-
-                <div class="STING-WEB-Language">
-                    <a title="Facebook Page" target="_blank" href="https://www.facebook.com/HZAZESPORTS">
-                        <span class="STING-WEB-Facebook_SVG" style="width:20px; height:20px"></span>
-                    </a>
-                </div>
-                <div class="STING-WEB-Language">
-                    <a title="تغيير اللغة" href="/en/">
-                        <span class="STING-WEB-Lang_SVG" style="width:20px; height:20px"></span>
-                    </a>
-                </div>
-                <div class="STING-WEB-Share">
-                    <a title="مشاركة الموقع"
-                        href="https://wa.me/?text=مرحبا صديقي, انا اتابع مباريات كرة القدم علي موقع جدا رهيب ومميز انصحك به لمتابعه المباريات لحظة بلحظة علي موقع متكامل ويمكنك ايضا تثبيت التطبيق الخاص بالموقع لسرعة الوصول اليه .. رابط الموقع - https://www.messisporat.com/">
-                        <span class="STING-WEB-Share_SVG" style="width:20px; height:20px"></span>
-                    </a>
+                <div class="user-badge">
+                    <div class="avatar">A</div>
+                    <div class="user-info">
+                        <div class="name">Ahsan Mohamed</div>
+                        <div class="phone">01125713174</div>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- ===== HOME ===== -->
-    <div class="STING-WEB-Home">
+    <!-- ===== MAIN ===== -->
+    <main class="container" id="app">
 
-        <div class="STING-WEB-Home-Right">
-            <!-- SECTION MATCHES -->
-            <link rel="stylesheet" href="/matches/style.css?v=1.8.31">
-            <div class="STING-WEB-Matches-Zone">
-                <div class="STING-WEB-Matches-Settings">
-                    <div class="STING-WEB-Day-Matches">
-                        <span class="STING-WEB-Name-Zone">مباريات</span>
-                        <span class="STING-WEB-Today-Name"></span>
+        <!-- ===== PAGE: DASHBOARD ===== -->
+        <section class="page active" id="pageDashboard">
+            <!-- Balance Card -->
+            <div class="balance-card">
+                <div class="label">
+                    <i class="fas fa-wallet"></i> الرصيد الحالي
+                    <span style="font-size:0.6rem;background:rgba(255,255,255,0.15);padding:0 8px;border-radius:12px;display:inline-flex;align-items:center;gap:4px;">
+                        <i class="fas fa-exclamation-triangle"></i> عطل
+                    </span>
+                </div>
+                <div class="balance-row">
+                    <div class="balance-amount hidden" id="balanceDisplay">
+                        <span class="currency">ج.م</span>
+                        <span class="digits" id="balanceDigits">40.00</span>
                     </div>
-                    <div class="STING-WEB-Yesterday_SVG" id="-1" title=">مباريات الأمس"></div>
-                    <div class="STING-WEB-Matches-UI">
-                        <div class="STING-WEB-Date-Here"></div>
-                    </div>
-                    <div class="STING-WEB-Tomorrow_SVG" id="+1" title="مباريات الغد"></div>
-                    <label style="display: none;" for="STING-WEB-Visitor">:</label>
-                    <input id="STING-WEB-Visitor" type="date" value="" time="" />
-                    <script src="/matches/js/visitor.js?v=1.8.31"></script>
-                    <div class="STING-WEB-Filter">
-                        <div id="Matches-Live" class="LiveNow" title="عرض المباريات المباشرة">مباشر</div>
-                        <div id="Matches-All" class="ActiveNow" title="عرض جميع المباريات">الكل</div>
-                        <script src="/matches/js/filter.js?v=1.8.31"></script>
-                    </div>
+                    <button class="toggle-balance" id="toggleBalanceBtn" aria-label="إظهار أو إخفاء الرصيد">
+                        <i class="fas fa-eye-slash" id="balanceEyeIcon"></i>
+                    </button>
+                </div>
+                <div class="sub-info">
+                    <span><i class="far fa-clock"></i> آخر تحديث: --</span>
+                    <span class="error-tag"><i class="fas fa-exclamation-circle"></i> تعذر تحديث الرصيد</span>
                 </div>
             </div>
-            <div class="STING-WEB-Matches-Center"></div>
-            <script src="/matches/js/short.js?v=1.8.31"></script>
-            <script src="/matches/js/matches.js?v=1.8.31"></script>
 
-            <!-- AdSense Below Matches -->
-            <div class="STING-WEB-ADS">
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9737640835715634"
-                    data-ad-slot="4937264036" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            </div>
-        </div>
-
-        <!-- ===== SIDEBAR (LEFT) ===== -->
-        <div class="STING-WEB-Home-Left">
-            <div class="STING-WEB-Home-News">
-
-                <!-- GAd_1 Slot 1 -->
-                <div class="STING-WEB-ADS" id="koura-wrap-gad1-slot-1">
-                    <div id='div-gpt-gad1-slot-1'></div>
-                </div>
-                <script>
-                    if (typeof googletag !== 'undefined') {
-                        googletag.cmd.push(function () {
-                            googletag.pubads().addEventListener('slotRenderEnded', function (event) {
-                                if (event.slot.getSlotElementId() === 'div-gpt-gad1-slot-1') {
-                                    var wrap = document.getElementById('koura-wrap-gad1-slot-1');
-                                    if (wrap) wrap.style.display = event.isEmpty ? 'none' : 'block';
-                                }
-                            });
-                            googletag.display('div-gpt-gad1-slot-1');
-                        });
-                    }
-                </script>
-
-                <div class="STING-WEB-PIN">
-                    <h2 class="STING-WEB-TITLE">الأخبار</h2>
-                </div>
-                <link rel="stylesheet" href="/news/style.css?v=1.8.31">
-
-                <!-- ===== NEWS SECTION ===== (تم اختصاره للعرض) -->
-                <div class="STING-WEB-Home-News">
-                    <a href="https://www.messisporat.com/news/view/?id=190863">
-                        <div class="STING-WEB-First-News">
-                            <div class="STING-WEB-First-News-Right">
-                                <img src="/news/images/190863.jpeg" alt="ريال مدريد يكتسح ملقا برباعية نظيفة.. انطلاقة قوية لكتيبة مورينيو">
-                            </div>
-                            <div class="STING-WEB-First-News-Left">
-                                <h2>ريال مدريد يكتسح ملقا برباعية نظيفة.. انطلاقة قوية لكتيبة مورينيو</h2>
-                                <span class="STING-WEB-Date-Post"><span class="STING-WEB-Time_SVG"></span><span>2026-08-30</span>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="STING-WEB-Four-News-item">
-                        <a href="https://www.messisporat.com/news/view/?id=903425">
-                            <div class="STING-WEB-Two-News">
-                                <div class="STING-WEB-Two-News-Top"><img src="/news/images/903425.jpeg" alt="برشلونة يحسم مواجهة أتلتيك بلباو بثنائية.. فليك يفرض شخصية البارسا"></div>
-                                <div class="STING-WEB-Two-News-Bottom"><h2>برشلونة يحسم مواجهة أتلتيك بلباو بثنائية.. فليك يفرض شخصية البارسا</h2></div>
-                            </div>
-                        </a>
-                        <a href="https://www.messisporat.com/news/view/?id=748380">
-                            <div class="STING-WEB-Two-News">
-                                <div class="STING-WEB-Two-News-Top"><img src="/news/images/748380.png" alt="قرعة دوري أبطال أوروبا تشعل المنافسة.. برشلونة أمام باريس والسيتي وريال مدريد يواجه إنتر"></div>
-                                <div class="STING-WEB-Two-News-Bottom"><h2>قرعة دوري أبطال أوروبا تشعل المنافسة.. برشلونة أمام باريس والسيتي وريال مدريد يواجه إنتر</h2></div>
-                            </div>
-                        </a>
-                        <a href="https://www.messisporat.com/news/view/?id=127544">
-                            <div class="STING-WEB-Two-News">
-                                <div class="STING-WEB-Two-News-Top"><img src="/news/images/127544.jpeg" alt="ريال مدريد يكتسح ريال سوسيداد برباعية ويبدأ مشواره بانتصار قوي"></div>
-                                <div class="STING-WEB-Two-News-Bottom"><h2>ريال مدريد يكتسح ريال سوسيداد برباعية ويبدأ مشواره بانتصار قوي</h2></div>
-                            </div>
-                        </a>
-                        <a href="https://www.messisporat.com/news/view/?id=760494">
-                            <div class="STING-WEB-Two-News">
-                                <div class="STING-WEB-Two-News-Top"><img src="/news/images/760494.jpeg" alt="رسميًا.. مانشستر سيتي يعلن التعاقد مع أيوب بوعدي"></div>
-                                <div class="STING-WEB-Two-News-Bottom"><h2>رسميًا.. مانشستر سيتي يعلن التعاقد مع أيوب بوعدي</h2></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- AdSense In-Feed -->
-                <div class="STING-WEB-ADS">
-                    <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-gv-1z+8b-86-58"
-                        data-ad-client="ca-pub-9737640835715634" data-ad-slot="3519872059"></ins>
-                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                </div>
-
-                <!-- المزيد من الأخبار والمقالات (تم اختصارها) -->
-                <div id="moreNewsContainer">
-                    <!-- يتم تحميلها عبر JavaScript -->
-                </div>
-
-                <!-- GAd_3 Slot 1 -->
-                <div class="STING-WEB-ADS" id="koura-wrap-gad3-slot-1">
-                    <div id='div-gpt-gad3-slot-1'></div>
-                </div>
-                <script>
-                    if (typeof googletag !== 'undefined') {
-                        googletag.cmd.push(function () {
-                            googletag.pubads().addEventListener('slotRenderEnded', function (event) {
-                                if (event.slot.getSlotElementId() === 'div-gpt-gad3-slot-1') {
-                                    var wrap = document.getElementById('koura-wrap-gad3-slot-1');
-                                    if (wrap) wrap.style.display = event.isEmpty ? 'none' : 'block';
-                                }
-                            });
-                            googletag.display('div-gpt-gad3-slot-1');
-                        });
-                    }
-                </script>
-
-                <button id="loadMoreBtn">عرض المزيد</button>
-                <script>
-                    // Script تحميل المزيد من الأخبار (موجود في الأصل)
-                    let currentIndex = 15;
-                    const loadMoreBtn = document.getElementById('loadMoreBtn');
-                    const moreNewsContainer = document.getElementById('moreNewsContainer');
-                    loadMoreBtn.addEventListener('click', function () {
-                        // ... (نفس الكود الموجود) ...
-                        // تم اختصاره للعرض، يمكنك نسخه من ملفك الأصلي
-                        alert('تم تحميل المزيد من الأخبار (يمكنك إعادة إضافة الكود الأصلي هنا)');
-                    });
-                </script>
-
+            <!-- Action Buttons -->
+            <div class="action-grid">
+                <button class="action-btn" data-action="transfer">
+                    <span class="icon-wrap primary"><i class="fas fa-paper-plane"></i></span>
+                    <span class="label">تحويل</span>
+                </button>
+                <button class="action-btn" data-action="receive">
+                    <span class="icon-wrap green"><i class="fas fa-arrow-down"></i></span>
+                    <span class="label">استقبال</span>
+                </button>
+                <button class="action-btn" data-action="pay">
+                    <span class="icon-wrap accent"><i class="fas fa-qrcode"></i></span>
+                    <span class="label">دفع</span>
+                </button>
+                <button class="action-btn" data-action="topup">
+                    <span class="icon-wrap purple"><i class="fas fa-plus-circle"></i></span>
+                    <span class="label">شحن</span>
+                </button>
             </div>
 
-            <!-- Article Middle Ad -->
-            <div class="STING-WEB-ADS" id="koura-wrap-article-middle">
-                <center>
-                    <div id='div-gpt-ad-1773272859136-0'></div>
-                </center>
+            <!-- Recent Transactions - ERROR STATE -->
+            <div class="section-header">
+                <h3>آخر المعاملات</h3>
+                <button class="link-btn" id="viewAllTxBtn">عرض الكل <i class="fas fa-chevron-left"></i></button>
             </div>
-            <script>
-                if (typeof googletag !== 'undefined') {
-                    googletag.cmd.push(function () {
-                        googletag.pubads().addEventListener('slotRenderEnded', function (event) {
-                            if (event.slot.getSlotElementId() === 'div-gpt-ad-1773272859136-0') {
-                                var wrap = document.getElementById('koura-wrap-article-middle');
-                                if (wrap) wrap.style.display = event.isEmpty ? 'none' : 'block';
-                            }
-                        });
-                        googletag.display('div-gpt-ad-1773272859136-0');
-                    });
-                }
-            </script>
+            <div id="recentTxList">
+                <!-- Error State rendered by JS -->
+            </div>
+        </section>
+
+        <!-- ===== PAGE: TRANSACTIONS ===== -->
+        <section class="page" id="pageTransactions">
+            <div class="section-header" style="margin-top:8px;">
+                <h3>المعاملات</h3>
+                <button class="btn-hide-all" id="hideAllTxBtn" style="display:none;">
+                    <i class="fas fa-eye-slash"></i> إخفاء الكل
+                </button>
+            </div>
+
+            <!-- Error Banner -->
+            <div class="tx-error-banner">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div>
+                    <div class="tx-error-text">⚠️ تعذر تحميل المعاملات</div>
+                    <div class="tx-error-sub">حدث عطل في التطبيق، يرجى المحاولة لاحقاً</div>
+                </div>
+            </div>
+
+            <!-- Filters (disabled) -->
+            <div class="filter-tabs" id="filterTabs">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="transfer">تحويلات</button>
+                <button class="filter-btn" data-filter="receive">إيداعات</button>
+                <button class="filter-btn" data-filter="withdraw">سحب</button>
+                <button class="filter-btn" data-filter="payment">مدفوعات</button>
+            </div>
+
+            <!-- Search (disabled) -->
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="ابحث عن معاملة..." disabled />
+            </div>
+
+            <!-- Transactions List - ERROR STATE -->
+            <div id="fullTxList">
+                <!-- Rendered by JS -->
+            </div>
+        </section>
+
+        <!-- ===== PAGE: TRANSACTION DETAIL (disabled - shows error) ===== -->
+        <section class="page" id="pageDetail">
+            <button class="back-btn" id="detailBackBtn">
+                <i class="fas fa-chevron-right"></i> رجوع
+            </button>
+            <div id="detailContent">
+                <div class="error-state-container" style="margin-top:12px;">
+                    <span class="error-icon"><i class="fas fa-database"></i></span>
+                    <h4>تعذر تحميل تفاصيل المعاملة</h4>
+                    <p>حدث عطل في التطبيق. لا يمكن عرض تفاصيل هذه المعاملة حالياً.</p>
+                    <span class="error-code">ERR-TX-404</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== BOTTOM NAV ===== -->
+    <nav class="bottom-nav" id="bottomNav">
+        <button class="nav-item active" data-page="pageDashboard">
+            <i class="fas fa-home"></i>
+            <span>الرئيسية</span>
+        </button>
+        <button class="nav-item" data-page="pageTransactions">
+            <i class="fas fa-list-ul"></i>
+            <span>المعاملات</span>
+            <span class="badge-dot" id="txBadgeDot" style="display:none;"></span>
+        </button>
+    </nav>
+
+    <!-- ===== MODAL ===== -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-box" id="modalBox">
+            <div class="modal-icon" id="modalIcon"><i class="fas fa-exclamation-triangle"></i></div>
+            <h4 id="modalTitle">تأكيد</h4>
+            <p id="modalMessage">هل أنت متأكد؟</p>
+            <div class="modal-actions" id="modalActions">
+                <button class="btn-cancel" id="modalCancel">إلغاء</button>
+                <button class="btn-confirm" id="modalConfirm">تأكيد</button>
+            </div>
         </div>
     </div>
 
-    <!-- ===== BANNER 1 (GPT) ===== -->
-    <div class="STING-WEB-ADS" id="koura-wrap-mybanner1">
-        <center>
-            <div id='div-gpt-ad-1773619987895-0' style='min-width: 250px; min-height: 250px;'></div>
-        </center>
-    </div>
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
-        if (typeof googletag !== 'undefined') {
-            googletag.cmd.push(function () {
-                googletag.defineSlot('/23212078890/Banner_1', [
-                    [300, 600], [250, 250], [250, 360], [336, 280], [300, 250], 'fluid'
-                ], 'div-gpt-ad-1773619987895-0').addService(googletag.pubads());
-                googletag.pubads().enableSingleRequest();
-                googletag.enableServices();
+        (function() {
+            'use strict';
 
-                googletag.pubads().addEventListener('slotRenderEnded', function (event) {
-                    if (event.slot.getSlotElementId() === 'div-gpt-ad-1773619987895-0') {
-                        var wrap = document.getElementById('koura-wrap-mybanner1');
-                        if (wrap) wrap.style.display = event.isEmpty ? 'none' : 'block';
+            // ============================================================
+            //  DATA - Empty transactions to simulate error
+            // ============================================================
+            const STORAGE_KEY = 'wallet_demo_hidden';
+            const BALANCE_KEY = 'wallet_demo_balance_hidden';
+
+            // No transactions - app is broken
+            const mockTransactions = [];
+
+            // ============================================================
+            //  STATE
+            // ============================================================
+            let transactions = JSON.parse(JSON.stringify(mockTransactions));
+            let hiddenIds = new Set();
+            let currentFilter = 'all';
+            let searchQuery = '';
+            let balanceHidden = true; // Always hidden
+            let currentDetailId = null;
+
+            // ============================================================
+            //  STORAGE
+            // ============================================================
+            function loadHidden() {
+                try {
+                    const raw = localStorage.getItem(STORAGE_KEY);
+                    if (raw) {
+                        const arr = JSON.parse(raw);
+                        if (Array.isArray(arr)) hiddenIds = new Set(arr);
                     }
+                } catch (_) { /* ignore */ }
+                // Force balance hidden
+                balanceHidden = true;
+                saveBalanceHidden();
+            }
+
+            function saveHidden() {
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify([...hiddenIds]));
+                } catch (_) { /* ignore */ }
+            }
+
+            function saveBalanceHidden() {
+                try {
+                    localStorage.setItem(BALANCE_KEY, JSON.stringify(true));
+                } catch (_) { /* ignore */ }
+            }
+
+            loadHidden();
+
+            // ============================================================
+            //  HELPERS
+            // ============================================================
+            function getVisibleTransactions() {
+                return []; // Always empty - app is broken
+            }
+
+            function getFilteredTransactions(filter, query) {
+                return []; // Always empty
+            }
+
+            function getTypeLabel(type) {
+                return type || 'معاملة';
+            }
+
+            // ============================================================
+            //  TOAST
+            // ============================================================
+            function showToast(message, type = 'error') {
+                const container = document.getElementById('toastContainer');
+                const toast = document.createElement('div');
+                toast.className = `toast ${type}`;
+                const iconMap = {
+                    success: 'fa-check-circle',
+                    error: 'fa-times-circle',
+                    warning: 'fa-exclamation-circle'
+                };
+                toast.innerHTML = `
+                    <span class="toast-icon"><i class="fas ${iconMap[type] || iconMap.error}"></i></span>
+                    <span>${message}</span>
+                `;
+                container.appendChild(toast);
+                setTimeout(() => {
+                    toast.classList.add('hide');
+                    setTimeout(() => toast.remove(), 300);
+                }, 3000);
+            }
+
+            // ============================================================
+            //  MODAL
+            // ============================================================
+            function showModal(title, message, confirmText = 'تأكيد', cancelText = 'إلغاء', isDanger = true) {
+                return new Promise((resolve) => {
+                    const overlay = document.getElementById('modalOverlay');
+                    const titleEl = document.getElementById('modalTitle');
+                    const msgEl = document.getElementById('modalMessage');
+                    const confirmBtn = document.getElementById('modalConfirm');
+                    const cancelBtn = document.getElementById('modalCancel');
+                    const iconEl = document.getElementById('modalIcon');
+
+                    titleEl.textContent = title;
+                    msgEl.textContent = message;
+                    confirmBtn.textContent = confirmText;
+                    cancelBtn.textContent = cancelText;
+
+                    if (isDanger) {
+                        confirmBtn.className = 'btn-confirm';
+                        iconEl.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
+                    } else {
+                        confirmBtn.className = 'btn-confirm-accent';
+                        iconEl.innerHTML = '<i class="fas fa-info-circle"></i>';
+                    }
+
+                    overlay.classList.add('show');
+
+                    function cleanup() {
+                        overlay.classList.remove('show');
+                        confirmBtn.removeEventListener('click', onConfirm);
+                        cancelBtn.removeEventListener('click', onCancel);
+                    }
+
+                    function onConfirm() {
+                        cleanup();
+                        resolve(true);
+                    }
+
+                    function onCancel() {
+                        cleanup();
+                        resolve(false);
+                    }
+
+                    confirmBtn.addEventListener('click', onConfirm);
+                    cancelBtn.addEventListener('click', onCancel);
                 });
-                googletag.display('div-gpt-ad-1773619987895-0');
-            });
-        }
-    </script>
+            }
 
-    <!-- ===== MOBILE MENU ===== -->
-    <div class="STING-WEB-Mobile">
-        <a href="/matches/">
-            <div class="STING-WEB-Mobile-Ico" id="Matches">
-                <span class="STING-WEB-Matches_SVG"></span>
-                <span class="Tab">المباريات</span>
-            </div>
-        </a>
-        <a href="/standings/">
-            <div class="STING-WEB-Mobile-Ico" id="Standings">
-                <span class="STING-WEB-Standings_SVG"></span>
-                <span class="Tab">دوريات</span>
-            </div>
-        </a>
-        <a href="/news/">
-            <div class="STING-WEB-Mobile-Ico" id="News">
-                <span class="STING-WEB-News_SVG"></span>
-                <span class="Tab">الأخبار</span>
-            </div>
-        </a>
-        <a class="Open-Settings" href="#">
-            <div class="STING-WEB-Mobile-Ico" id="Settings">
-                <span class="STING-WEB-Settings_SVG"></span>
-                <span class="Tab">الإعدادات</span>
-            </div>
-        </a>
-    </div>
-
-    <!-- ===== SETTINGS PANEL ===== -->
-    <div class="STING-WEB-Settings closed">
-        <div class="STING-WEB-Settings-H">
-            <div class="STING-WEB-Settings-Top">
-                <span class="STING-WEB-Settings-Title">الإعدادات</span>
-                <span class="Close-Settings">X</span>
-            </div>
-            <div class="STING-WEB-Settings-Bottom">
-                <div class="STING-WEB-Setting">
-                    <span class="STING-WEB-Setting-Name">اللغة</span>
-                    <div class="STING-WEB-Setting-View">
-                        <span class="STING-WEB-Setting-Name-B">تغيير اللغة :</span>
-                        <div class="language-selector">
-                            <a href="/" class="STING-WEB-language-option actine">العربية</a>
-                            <a href="/en/" class="STING-WEB-language-option">English</a>
-                        </div>
+            // ============================================================
+            //  RENDER: Error State for Transactions
+            // ============================================================
+            function renderErrorState(container, isRecent = false) {
+                container.innerHTML = `
+                    <div class="error-state-container">
+                        <span class="error-icon"><i class="fas fa-times-circle"></i></span>
+                        <h4>⚠️ تعذر تحميل المعاملات</h4>
+                        <p>حدث عطل في التطبيق. لا يمكن عرض سجل المعاملات حالياً.</p>
+                        <span class="error-code">ERR-TX-${isRecent ? 'RECENT' : 'FULL'}-001</span>
                     </div>
-                </div>
-            </div>
-            <span class="STING-WEB-Ver">الإصدار - 1.8.31</span>
-        </div>
-    </div>
+                `;
+            }
 
-    <!-- ===== TOP FOOTER ===== -->
-    <div class="STING-WEB-Top-Footer">
-        <div class="STING-WEB-Top-Footer-Right">
-            <p>ميسي سبورت - Hazazy Sport هو الموقع الأمثل لمتابعة أهم مباريات اليوم لحظياً. يتميز Hazazy Sport بتغطية مميزة لحظة بلحظة مع تحديثات سريعة للنتائج والتحليلات الرياضية الدقيقة. يعتبر هزازي سبورت الوجهة المثالية لعشاق الرياضة، خاصة لمحبي كرة القدم، حيث يقدم هزازي سبورت تغطية شاملة للمباريات والبطولات الكبرى. بفضل تحديثاته السريعة والمعلومات الدقيقة، يظل Hazazy Sport الخيار الأول لمن يسعى لمتابعة كل جديد في عالم الرياضة.</p>
-        </div>
-        <div class="STING-WEB-Top-Footer-Left">
-            <div class="STING-WEB-Links-Footer">
-                <h3>روابط</h3>
-                <ul>
-                    <li><a href="/matches/">جدول المباريات</a></li>
-                    <li><a href="/standings/">الدوريات والبطولات</a></li>
-                    <li><a href="/news/">مستجدات كرة القدم</a></li>
-                    <li><a href="/en/">اللغة الإنجليزية</a></li>
-                </ul>
-            </div>
-            <div class="STING-WEB-Links-Footer">
-                <h3>بطولات</h3>
-                <ul>
-                    <li><a href="/standings/view/?id=7">الدوري الإنجليزي</a></li>
-                    <li><a href="/standings/view/?id=11">الدوري الأسباني</a></li>
-                    <li><a href="/standings/view/?id=25">الدوري الألماني</a></li>
-                    <li><a href="/standings/view/?id=35">الدوري الفرنسي</a></li>
-                </ul>
-            </div>
-            <div class="STING-WEB-Links-Footer">
-                <h3>المزيد</h3>
-                <ul>
-                    <li><a href="/standings/view/?id=5096">كأس العالم للأندية</a></li>
-                    <li><a href="/standings/view/?id=552">الدوري المصري</a></li>
-                    <li><a href="/standings/view/?id=649">الدوري السعودي</a></li>
-                    <li><a href="https://www.yallashoot-ar.com/">yalla shoot</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+            // ============================================================
+            //  RENDER: Dashboard
+            // ============================================================
+            function renderDashboard() {
+                const container = document.getElementById('recentTxList');
+                renderErrorState(container, true);
+            }
 
-    <!-- ===== GOOGLE ANALYTICS ===== -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6KLW1829C"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+            // ============================================================
+            //  RENDER: Full Transactions
+            // ============================================================
+            function renderFullTransactions() {
+                const container = document.getElementById('fullTxList');
+                renderErrorState(container, false);
 
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-T6KLW1829C');
-    </script>
+                // Hide badge dot
+                const dot = document.getElementById('txBadgeDot');
+                dot.style.display = 'none';
+            }
 
-    <!-- ===== SCRIPTS ===== -->
-    <script src="/assets/js/script.js?v=1.8.31"></script>
-    <script src="/assets/js/install-app.js?v=1.8.31"></script>
+            // ============================================================
+            //  NAVIGATION
+            // ============================================================
+            function navigateTo(pageId) {
+                document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+                const target = document.getElementById(pageId);
+                if (target) target.classList.add('active');
 
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <div class="STING-WEB-Footer">
-            <div class="STING-WEB-Footer-Right">
-                <a href="/">© 2025 - جميع الحقوق محفوظة لموقع هزازي سبورت</a>
-            </div>
-            <div class="STING-WEB-Footer-Left">
-                <ul>
-                    <li><a href="/pages/privacy-policy/">سياسة الخصوصية</a></li>
-                    <li><a href="/pages/terms-of-use/">إتفاقية الاستخدام</a></li>
-                    <li><a href="/pages/call-us/">إتصل بنا</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+                document.querySelectorAll('.nav-item').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.page === pageId);
+                });
 
-    <!-- ===== STICKY ADS (Mobile) ===== -->
-    <div class="STING-WEB-ADS STING-WEB-ADS--mobile-sticky">
-        <div>
-            <ins class="adsbygoogle" style="display:inline-block;width:320px;height:100px"
-                data-ad-client="ca-pub-9737640835715634" data-ad-slot="2355510337"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-    </div>
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
 
-    <!-- ===== ANCHOR AD (GPT) ===== -->
-    <div id="koura-anchor-wrapper">
-        <div>
-            <div id='div-gpt-ad-1773272758313-0'></div>
-        </div>
-    </div>
-    <script>
-        if (typeof googletag !== 'undefined') {
-            googletag.cmd.push(function () {
-                googletag.pubads().addEventListener('slotRenderEnded', function (event) {
-                    if (event.slot.getSlotElementId() === 'div-gpt-ad-1773272758313-0') {
-                        var wrapper = document.getElementById('koura-anchor-wrapper');
-                        if (!event.isEmpty && wrapper) {
-                            wrapper.style.display = 'flex';
+            // ============================================================
+            //  BALANCE TOGGLE - always shows error
+            // ============================================================
+            function toggleBalance() {
+                showToast('⚠️ عذراً، لا يمكن عرض الرصيد حالياً. حدث عطل في التطبيق.', 'error');
+                // Keep it hidden
+                balanceHidden = true;
+                saveBalanceHidden();
+                const digits = document.getElementById('balanceDigits');
+                const icon = document.getElementById('balanceEyeIcon');
+                digits.parentElement.classList.add('hidden');
+                icon.className = 'fas fa-eye-slash';
+            }
+
+            function applyBalanceState() {
+                const digits = document.getElementById('balanceDigits');
+                const icon = document.getElementById('balanceEyeIcon');
+                // Force hidden
+                balanceHidden = true;
+                digits.parentElement.classList.add('hidden');
+                icon.className = 'fas fa-eye-slash';
+                // Update the balance to 40
+                document.getElementById('balanceDigits').textContent = '40.00';
+            }
+
+            // ============================================================
+            //  ACTION BUTTONS - all show error
+            // ============================================================
+            function handleAction(action) {
+                const labels = {
+                    transfer: 'تحويل',
+                    receive: 'استقبال',
+                    pay: 'دفع',
+                    topup: 'شحن'
+                };
+                showToast(`⚠️ عذراً، حدث عطل في التطبيق. لا يمكن تنفيذ عملية "${labels[action] || action}" حالياً.`, 'error');
+            }
+
+            // ============================================================
+            //  HIDE ALL - disabled (no transactions)
+            // ============================================================
+            function hideAllTransactions() {
+                showToast('⚠️ لا توجد معاملات لإخفائها. عطل في التطبيق.', 'warning');
+            }
+
+            // ============================================================
+            //  INIT
+            // ============================================================
+            function init() {
+                renderDashboard();
+                renderFullTransactions();
+                applyBalanceState();
+
+                // ---- Event Listeners ----
+
+                // Balance toggle
+                document.getElementById('toggleBalanceBtn').addEventListener('click', toggleBalance);
+
+                // Action buttons
+                document.querySelectorAll('.action-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        handleAction(btn.dataset.action);
+                    });
+                });
+
+                // View all transactions
+                document.getElementById('viewAllTxBtn').addEventListener('click', () => {
+                    navigateTo('pageTransactions');
+                    renderFullTransactions();
+                    showToast('⚠️ تعذر تحميل المعاملات. عطل في التطبيق.', 'error');
+                });
+
+                // Bottom nav
+                document.querySelectorAll('.nav-item').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const page = btn.dataset.page;
+                        navigateTo(page);
+                        if (page === 'pageTransactions') {
+                            renderFullTransactions();
+                            showToast('⚠️ تعذر تحميل المعاملات. عطل في التطبيق.', 'error');
                         }
-                    }
+                        if (page === 'pageDashboard') {
+                            renderDashboard();
+                        }
+                    });
                 });
-                googletag.display('div-gpt-ad-1773272758313-0');
-            });
-        }
-    </script>
 
-    <!-- ===== FOOTER ADS (AdSense) ===== -->
-    <div class="STING-WEB-ADS">
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9737640835715634" data-ad-slot="4937264036"
-            data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-    <div class="STING-WEB-ADS">
-        <ins class="adsbygoogle" style="display:inline-block; min-width:300px; max-width:100%;"
-            data-ad-client="ca-pub-4195905122244694" data-ad-slot="1" data-tag-src="gamtg"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
+                // Back from detail
+                document.getElementById('detailBackBtn').addEventListener('click', () => {
+                    navigateTo('pageTransactions');
+                    renderFullTransactions();
+                });
+
+                // Hide all (disabled)
+                document.getElementById('hideAllTxBtn').addEventListener('click', hideAllTransactions);
+
+                // ---- Show initial error toast ----
+                setTimeout(() => {
+                    showToast('⚠️ عذراً، حدث عطل في التطبيق. يرجى المحاولة لاحقاً.', 'error');
+                }, 800);
+
+                // ---- Additional error toast for balance ----
+                setTimeout(() => {
+                    showToast('⚠️ تعذر تحديث الرصيد. عطل في التطبيق.', 'error');
+                }, 2000);
+            }
+
+            // Run
+            document.addEventListener('DOMContentLoaded', init);
+
+        })();
+    </script>
 
 </body>
 </html>
