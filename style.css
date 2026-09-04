@@ -1,8 +1,8 @@
 /* ============================================================
    [ STING WEB ] - Football Auto API
-   ~> Version      : V 1.1 (Improved)
+   ~> Version      : V 1.2 (Final)
    ~> Last Updated : 04 - 09 - 2026
-   ~> Developer    : STING WEB + Custom Enhancements
+   ~> Developer    : STING WEB + Enhanced
    ============================================================ */
 
 /* ======  ROOT VARIABLES ====== */
@@ -99,6 +99,11 @@ body {
     display: block;
 }
 
+.STING-WEB-Facebook_SVG {
+    background: no-repeat center url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23b4bec7'%3E%3Cpath d='M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z'/%3E%3C/svg%3E");
+    display: block;
+}
+
 .STING-WEB-TITLE_SVG {
     background: no-repeat center url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 12H18L15 21L9 3L6 12H2' stroke='%23b4bec7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     width: 20px;
@@ -111,6 +116,22 @@ body {
     width: 12px;
     height: 12px;
     display: block;
+}
+
+.STING-WEB-Yesterday_SVG {
+    background: no-repeat center url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23b4bec7'%3E%3Cpath d='M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z'/%3E%3C/svg%3E");
+    width: 25px;
+    height: 25px;
+    display: block;
+    cursor: pointer;
+}
+
+.STING-WEB-Tomorrow_SVG {
+    background: no-repeat center url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23b4bec7'%3E%3Cpath d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'/%3E%3C/svg%3E");
+    width: 25px;
+    height: 25px;
+    display: block;
+    cursor: pointer;
 }
 
 /* ======  HEADER ====== */
@@ -417,6 +438,7 @@ header {
     max-width: var(--Max-Size);
     margin: 10px auto;
     width: 100%;
+    gap: 12px;
 }
 
 .STING-WEB-Home-Right,
@@ -429,181 +451,199 @@ header {
         display: grid;
         grid-template-columns: 1fr;
         margin: 0 auto;
+        gap: 0;
+    }
+    .STING-WEB-Home-News {
+        display: block !important;
     }
 }
 
-/* ======  INSTALL APP POPUP ====== */
-.STING-WEB-Install-App-PopUp {
-    position: fixed;
-    bottom: 0;
-    display: grid;
-    grid-template-columns: 2fr 0.5fr;
-    align-items: center;
-    width: 93%;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    background: var(--B-Color);
-    padding: 10px;
-    justify-items: center;
-    max-width: 350px;
-    border-radius: 10px;
-    gap: 10px;
-    z-index: 99;
-    animation: slideUp 0.5s ease-out;
-}
-
-.STING-WEB-Install-App-PopUp-Right {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 0.5fr 3fr;
-    align-items: center;
-    justify-items: center;
-    gap: 12px;
-}
-
-.STING-WEB-App-Name {
-    display: grid;
-    font-size: 15px;
-}
-
-.STING-WEB-App-Icon {
-    width: 60px;
-    height: 60px;
-}
-
-.STING-WEB-App-Icon img {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-}
-
-#STING-WEB-Install-App {
-    width: 100%;
-    max-width: 100px;
-    padding: 4px 15px;
-    border: 0;
-    background: var(--C-Color);
-    color: var(--Primary-B-Color);
-    font-size: 13px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.Close-Install-App {
-    position: absolute;
-    left: 0;
-    top: -22px;
-    font-size: 15px;
-    color: var(--Primary-E-Color);
-    background: var(--B-Color);
-    border-radius: 8px 8px 0 0;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-}
-
-#STING-WEB-Install-App:hover,
-.Close-Install-App:hover {
-    color: var(--Primary-A-Color);
-}
-
-@media (max-width: 720px) {
-    .STING-WEB-Install-App-PopUp {
-        bottom: 68px;
-    }
-}
-
-@media (min-width: 990px) {
-    .STING-WEB-Install-App-PopUp {
-        display: none;
-    }
-}
-
-/* ======  MOBILE MENU ====== */
-.STING-WEB-Mobile {
-    display: none;
-    grid-template-columns: repeat(4, 1fr);
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
-    background: var(--A-Color);
-    z-index: 99999;
-    /* Increased to stay below ads but above content */
-}
-
-.STING-WEB-Mobile-Ico {
-    display: grid;
-    gap: 2px;
-    align-items: center;
-    justify-items: center;
-    color: var(--Primary-E-Color);
-    font-size: 10px;
-    padding: 12px 0;
-    transition: all 0.3s ease;
-}
-
-.STING-WEB-Mobile-Ico:active {
-    transform: scale(0.9);
-}
-
-@media (max-width: 720px) {
-    .STING-WEB-Mobile {
-        display: grid !important;
-    }
-}
-
-/* ======  FOOTER ====== */
-.STING-WEB-Footer {
-    display: flex;
-    justify-content: space-between;
-    width: 88%;
-    padding: 10px 20px;
-    max-width: var(--Max-Size);
-    margin: 20px auto;
+/* ======  MATCHES ZONE ====== */
+.STING-WEB-Matches-Zone {
     background: var(--B-Color);
     border-radius: 12px;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    height: 40px;
+    padding: 15px;
+    margin: 12px 0;
 }
 
-.STING-WEB-Footer-Right a {
-    font-size: 16px;
-    color: var(--Primary-A-Color);
-}
-
-.STING-WEB-Footer-Right a:hover {
-    color: var(--Primary-E-Color);
-}
-
-.STING-WEB-Footer-Left ul li a {
-    font-size: 15px;
-    color: var(--Primary-E-Color);
-}
-
-.STING-WEB-Footer-Left ul li a:hover {
-    color: var(--Primary-A-Color);
-}
-
-.STING-WEB-Footer-Left ul {
+.STING-WEB-Matches-Settings {
     display: flex;
-    gap: 12px;
+    flex-wrap: wrap;
     align-items: center;
+    gap: 12px;
+    justify-content: space-between;
 }
 
-@media (max-width: 720px) {
-    .STING-WEB-Footer {
-        display: none !important;
-    }
-    body {
-        margin-bottom: 100px;
-    }
+.STING-WEB-Day-Matches {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.STING-WEB-Name-Zone {
+    color: var(--Primary-A-Color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.STING-WEB-Matches-UI {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.STING-WEB-Filter {
+    display: flex;
+    gap: 6px;
+}
+
+.STING-WEB-Filter div {
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: var(--A-Color);
+    color: #aaa;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.85rem;
+}
+
+.STING-WEB-Filter div.ActiveNow {
+    background: var(--Primary-A-Color);
+    color: #000;
+    font-weight: bold;
+}
+
+.STING-WEB-Filter div.LiveNow {
+    background: #e74c3c;
+    color: #fff;
+}
+
+/* ======  NEWS ====== */
+.STING-WEB-Home-News {
+    display: grid;
+    gap: 18px;
+    margin-top: 12px;
+}
+
+.STING-WEB-First-News {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    background: var(--B-Color);
+    border-radius: 12px;
+    padding: 12px;
+    transition: 0.3s;
+}
+
+.STING-WEB-First-News:hover {
+    background: #1e2233;
+}
+
+.STING-WEB-First-News-Right img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.STING-WEB-First-News-Left h2 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.STING-WEB-Four-News-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.STING-WEB-Two-News {
+    background: var(--B-Color);
+    border-radius: 12px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.STING-WEB-Two-News:hover {
+    background: #1e2233;
+}
+
+.STING-WEB-Two-News-Top img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.STING-WEB-Two-News-Bottom h2 {
+    font-size: 0.95rem;
+    color: #fff;
+    margin-top: 8px;
+}
+
+.STING-WEB-Three-News {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+    background: var(--B-Color);
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.STING-WEB-Three-News:hover {
+    background: #1e2233;
+}
+
+.STING-WEB-Three-News-Right img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.STING-WEB-Three-News-Left h2 {
+    font-size: 0.9rem;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.STING-WEB-Short-Content {
+    color: #aaa;
+    font-size: 0.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.STING-WEB-Date-Post {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--Primary-C-Color);
+    font-size: 0.75rem;
+    margin-top: 6px;
+}
+
+#loadMoreBtn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: var(--B-Color);
+    color: var(--Primary-A-Color);
+    border: 1px solid var(--Primary-A-Color);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-top: 16px;
+}
+
+#loadMoreBtn:hover {
+    background: var(--Primary-A-Color);
+    color: #000;
 }
 
 /* ======  SCROLLBAR ====== */
@@ -660,7 +700,6 @@ header {
     border-radius: 12px;
     z-index: 999;
     transition: bottom 0.5s ease-in-out;
-    animation: slideUp 0.5s ease-out;
 }
 
 .STING-WEB-Settings-H {
@@ -683,13 +722,17 @@ header {
     color: var(--Primary-E-Color);
 }
 
-.STING-WEB-Setting {
-    display: grid;
-    gap: 12px;
+.Close-Settings {
+    cursor: pointer;
 }
 
 .STING-WEB-Settings-Bottom {
     margin: 12px auto;
+}
+
+.STING-WEB-Setting {
+    display: grid;
+    gap: 12px;
 }
 
 .STING-WEB-Setting-Name {
@@ -739,17 +782,179 @@ header {
     display: block;
     font-size: 10px;
     color: var(--Primary-C-Color);
+    margin-top: 20px;
 }
 
-.STING-WEB-Dev {
-    text-align: center;
-    display: block;
+/* ======  MOBILE MENU ====== */
+.STING-WEB-Mobile {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    background: var(--A-Color);
+    z-index: 99999;
+    border-top: 1px solid #2a2d3a;
+}
+
+.STING-WEB-Mobile-Ico {
+    display: grid;
+    gap: 2px;
+    align-items: center;
+    justify-items: center;
+    color: var(--Primary-E-Color);
     font-size: 10px;
-    color: var(--Primary-C-Color);
+    padding: 12px 0;
+    transition: all 0.3s ease;
+}
+
+.STING-WEB-Mobile-Ico:active {
+    transform: scale(0.9);
+}
+
+.STING-WEB-Mobile-Ico .Tab {
+    font-size: 0.65rem;
+}
+
+.STING-WEB-Mobile-Ico.active {
+    color: var(--Primary-A-Color);
+}
+
+.STING-WEB-Mobile-Ico.active .Tab {
+    color: var(--Primary-A-Color);
+}
+
+@media (max-width: 720px) {
+    .STING-WEB-Mobile {
+        display: grid !important;
+    }
+    body {
+        margin-bottom: 100px;
+    }
+}
+
+/* ======  FOOTER ====== */
+.STING-WEB-Footer {
+    display: flex;
+    justify-content: space-between;
+    width: 88%;
+    padding: 10px 20px;
+    max-width: var(--Max-Size);
+    margin: 20px auto;
+    background: var(--B-Color);
+    border-radius: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 40px;
+}
+
+.STING-WEB-Footer-Right a {
+    font-size: 16px;
+    color: var(--Primary-A-Color);
+}
+
+.STING-WEB-Footer-Right a:hover {
+    color: var(--Primary-E-Color);
+}
+
+.STING-WEB-Footer-Left ul li a {
+    font-size: 15px;
+    color: var(--Primary-E-Color);
+}
+
+.STING-WEB-Footer-Left ul li a:hover {
+    color: var(--Primary-A-Color);
+}
+
+.STING-WEB-Footer-Left ul {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+@media (max-width: 720px) {
+    .STING-WEB-Footer {
+        display: none !important;
+    }
+}
+
+/* ======  TOP FOOTER ====== */
+.STING-WEB-Top-Footer {
+    width: 90%;
+    margin: 80px auto 0;
+    max-width: var(--Max-Size);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.STING-WEB-Top-Footer-Right {
+    display: grid;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.STING-WEB-Top-Footer-Right p {
+    color: var(--Primary-E-Color);
+    font-size: 12px;
+    text-align: justify;
+    width: 80%;
+}
+
+.STING-WEB-Top-Footer-Left {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    gap: 12px;
+}
+
+.STING-WEB-Links-Footer {
+    display: grid;
+    gap: 12px;
+}
+
+.STING-WEB-Links-Footer h3 {
+    font-size: 16px;
+    color: var(--Primary-A-Color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.STING-WEB-Links-Footer h3:before {
+    content: "";
+    width: 5px;
+    height: 15px;
+    background: var(--Primary-A-Color);
+    display: block;
+    border-radius: 50px;
+}
+
+.STING-WEB-Links-Footer ul li {
+    margin-bottom: 12px;
+}
+
+.STING-WEB-Links-Footer ul li a {
+    font-size: 15px;
+    color: var(--Primary-E-Color);
+}
+
+.STING-WEB-Links-Footer ul li a:hover {
+    color: var(--Primary-A-Color);
+}
+
+@media (max-width: 720px) {
+    .STING-WEB-Top-Footer {
+        display: none !important;
+    }
 }
 
 /* ============================================================
-   🚀  ENHANCED ADS SECTION (NEW)
+   🚀  ADS SECTION (ENHANCED)
    ============================================================ */
 
 /* --- 1. Ad Containers --- */
@@ -843,7 +1048,6 @@ ins.adsbygoogle,
 iframe[id^='aswift'],
 [id^='google_ads_iframe'] {
     z-index: 2147483647 !important;
-    /* Max possible z-index */
     pointer-events: auto !important;
 }
 
@@ -858,28 +1062,131 @@ iframe[name^="aswift"],
     pointer-events: auto !important;
 }
 
-/* ============================================================
-   🛠  EXTRA FIXES FOR LAYOUT CONSISTENCY
-   ============================================================ */
-
-/* Fix for empty spaces caused by hidden ads */
-.STING-WEB-ADS:empty {
-    display: none !important;
+/* --- 8. AdSense Transparency Fixes --- */
+#top-ads-container {
+    background: transparent !important;
 }
 
-/* Ensure all ad containers respect max-width */
-.STING-WEB-ADS,
-.ad-wrapper11 {
-    max-width: var(--Max-Size);
-    margin-left: auto;
-    margin-right: auto;
+/* ======  DESKTOP SCROLL FIX ====== */
+@media (min-width: 1000px) {
+    .STING-WEB-Home-Right {
+        max-height: 2125px;
+        overflow-y: auto;
+        padding-right: 6px;
+    }
+    .STING-WEB-Home-Right::-webkit-scrollbar {
+        width: 4px;
+        border-radius: 12px;
+    }
+    .STING-WEB-Home-Right::-webkit-scrollbar-track {
+        background: var(--A-Color);
+        border-radius: 12px;
+    }
+    .STING-WEB-Home-Right::-webkit-scrollbar-thumb {
+        background: #2a2d3a;
+        border-radius: 12px;
+    }
+    .STING-WEB-Home-Right::-webkit-scrollbar-thumb:hover {
+        background: var(--Primary-A-Color);
+        border-radius: 12px;
+    }
 }
 
-/* Prevent ads from breaking mobile layout */
+/* ======  INSTALL APP POPUP ====== */
+.STING-WEB-Install-App-PopUp {
+    position: fixed;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 2fr 0.5fr;
+    align-items: center;
+    width: 93%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    background: var(--B-Color);
+    padding: 10px;
+    justify-items: center;
+    max-width: 350px;
+    border-radius: 10px;
+    gap: 10px;
+    z-index: 99;
+    animation: slideUp 0.5s ease-out;
+}
+
+.STING-WEB-Install-App-PopUp-Right {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.5fr 3fr;
+    align-items: center;
+    justify-items: center;
+    gap: 12px;
+}
+
+.STING-WEB-App-Name {
+    display: grid;
+    font-size: 15px;
+}
+
+.STING-WEB-App-Icon {
+    width: 60px;
+    height: 60px;
+}
+
+.STING-WEB-App-Icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+#STING-WEB-Install-App {
+    width: 100%;
+    max-width: 100px;
+    padding: 4px 15px;
+    border: 0;
+    background: var(--C-Color);
+    color: var(--Primary-B-Color);
+    font-size: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.Close-Install-App {
+    position: absolute;
+    left: 0;
+    top: -22px;
+    font-size: 15px;
+    color: var(--Primary-E-Color);
+    background: var(--B-Color);
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+#STING-WEB-Install-App:hover,
+.Close-Install-App:hover {
+    color: var(--Primary-A-Color);
+}
+
 @media (max-width: 720px) {
-    .STING-WEB-ADS,
-    .ad-wrapper11 {
-        max-width: 100%;
-        padding: 0 8px;
+    .STING-WEB-Install-App-PopUp {
+        bottom: 68px;
+    }
+}
+
+@media (min-width: 990px) {
+    .STING-WEB-Install-App-PopUp {
+        display: none;
+    }
+}
+
+/* ======  MOBILE MATCHES ICON FIX ====== */
+@media (max-width: 720px) {
+    .STING-WEB-Matches_SVG {
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 47 30' fill='%2339dbbf'%3E%3Cpath d='M43.8181818,0.00272727273 L2.72727273,0.00272727273 C1.22345455,0.00272727273 0,1.22618182 0,2.73 L0,27.27 C0,28.7738182 1.22345455,29.9972727 2.72727273,29.9972727 L43.8181818,29.9972727 C45.322,29.9972727 46.5454545,28.7738182 46.5454545,27.27 L46.5454545,2.73 C46.5454545,1.22618182 45.322,0.00272727273 43.8181818,0.00272727273 Z M43.8193636,19.8143636 L39.7110909,19.8143636 L39.7110909,10.1856364 L43.8187273,10.1856364 L43.8193636,19.8143636 Z M24.6363636,11.6269091 C25.9792727,12.1656364 26.9299091,13.4740909 26.9299091,15 C26.9299091,16.5259091 25.9792727,17.8344545 24.6363636,18.3730909 L24.6363636,11.6269091 Z M2.72727273,10.1856364 L6.83436364,10.1856364 L6.83436364,19.8143636 L2.72727273,19.8143636 L2.72727273,10.1856364 Z M21.9090909,18.3730909 C20.5661818,17.8343636 19.6155455,16.5259091 19.6155455,15 C19.6155455,13.4740909 20.5661818,12.1655455 21.9090909,11.6269091 L21.9090909,18.3730909 Z M21.9090909,8.784 C19.0419091,9.40845455 16.8882727,11.9576364 16.8882727,15 C16.8882727,18.0423636 19.0419091,20.5915455 21.9090909,21.216 L21.9090909,27.27 L2.72727273,27.27 L2.72727273,22.5416364 L8.198,22.5416364 C8.95109091,22.5416364 9.56163636,21.9310909 9.56163636,21.178 L9.56163636,8.822 C9.56163636,8.06890909 8.95109091,7.45836364 8.198,7.45836364 L2.72727273,7.45836364 L2.72727273,2.73 L21.9090909,2.73 L21.9090909,8.784 Z M43.8181818,27.27 L24.6363636,27.27 L24.6363636,21.216 C27.5035455,20.5915455 29.6571818,18.0423636 29.6571818,15 C29.6571818,11.9576364 27.5035455,9.40845455 24.6363636,8.784 L24.6363636,2.73 L43.8181818,2.73 L43.8185455,7.45836364 L38.3475455,7.45836364 C37.5944545,7.45836364 36.9839091,8.06890909 36.9839091,8.822 L36.9839091,21.178 C36.9839091,21.9310909 37.5944545,22.5416364 38.3475455,22.5416364 L43.8196364,22.5416364 L43.8199091,27.27 C43.8199091,27.27 43.8193636,27.27 43.8181818,27.27 Z' id='Shape'%3E%3C/path%3E%3C/svg%3E") center no-repeat;
+    }
+    #Matches .Tab {
+        color: var(--Primary-A-Color);
     }
 }
